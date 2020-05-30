@@ -7,14 +7,6 @@ using namespace tensorflow::ops;
 SessionRunner::SessionRunner()
 {
     setAutoDelete(false);
-
-    /*
-    Status status;
-    status = ParseLocationsFile(box_priors);
-    if (!status.ok()) ERROR_OUT
-    status = LoadGraph(graph_path);
-    if (!status.ok()) ERROR_OUT
-    */
 }
 
 Status SessionRunner::Initialize()
