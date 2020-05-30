@@ -71,7 +71,7 @@ It is necessary to edit the tensorflow workspace in order that bazel may find th
 <pre>
 new_local_repository(
   name = "qt",
-  build_file = "tensorflow/examples/qt/qt.BUILD",
+  build_file = "tensorflow/examples/TF_Qt/qt/qt.BUILD",
   path = "C:/Qt/5.12.3/msvc2017_64",
 )
 </pre>
