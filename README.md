@@ -89,7 +89,7 @@ This is acheived by opening a command prompt and navigating to the appropriate Q
 The program directory executable is found within the tensorflow source tree at
 <p>
 <pre>
-\bazel-out\x64_windows-opt\bin\tensorflow\examples\qt\multibox;  
+\bazel-out\x64_windows-opt\bin\tensorflow\examples\TF_Qt\qt\multibox;  
 </pre>
 <p>
 Note that the full path name must be supplied, so the full path name will start with C:\ in most instances.
