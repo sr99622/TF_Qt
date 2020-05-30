@@ -78,7 +78,7 @@ new_local_repository(
 <p>
 <b><a name=A7>Compile the program</a></b>
 <p>
-The program may now be compiled.  There is a python script in the project named compile.py.  It can be invoked by right clicking over the file name the Visual Studio Code file navigation panel on the left hand side of the window.  The pop up menu will have a selection called "Run Python File In Terminal" which is the desired action.  The terminal pane should be display along the bottom of the window and show the compilation steps underway as the program compiles.  If all goes well, the build will complete successfully.
+The program may now be compiled.  There is a python script in the project named compile.py.  It can be invoked by right clicking over the file name the Visual Studio Code file navigation panel on the left hand side of the window.  The pop up menu will have a selection called "Run Python File In Terminal" which is the desired action.  The terminal pane should be displayed along the bottom of the window and show the compilation steps underway as the program compiles.  If all goes well, the build will complete successfully.
 <p>
 <b><a name=A8>Configure run time environment</a></b>
 <p>
@@ -89,7 +89,7 @@ This is acheived by opening a command prompt and navigating to the appropriate Q
 The program directory executable is found within the tensorflow source tree at
 <p>
 <pre>
-\bazel-out\x64_windows-opt\bin\tensorflow\examples\qt\multibox.  
+\bazel-out\x64_windows-opt\bin\tensorflow\examples\qt\multibox;  
 </pre>
 <p>
 Note that the full path name must be supplied, so the full path name will start with C:\ in most instances.
@@ -98,6 +98,6 @@ Once the program directory location has been added to the path, the windeployqt 
 <p>
 <b><a name=A9>Run the program</a></b>
 <p>
-If all has gone well, now is finally the time to run the program.  The prorgam can be launched from Visual Studio Code in much the same way as it was compiled.  The run.py file in the navigation pane is right clicked "Run Python File In Terminal" selected. The program will present a window with a button that can be clicked to run the model on the sample picture the same as in the standard Tensorflow example program with the same results.  Feel free at this point to crack a brewski and bask in the glory of accomplishment.
+If all has gone well, now is finally the time to run the program.  The program can be launched from Visual Studio Code in much the same way as it was compiled.  The run.py file in the navigation pane is right clicked "Run Python File In Terminal" selected. The program will present a window with a button that can be clicked to run the model on the sample picture the same manner as in the standard Tensorflow example program with the same results.  Feel free at this point to crack a brewski and bask in the glory of accomplishment.
 <p>
 Further information regarding the details of the implementation of the program can be found the README file in the multibox directory of the project.
