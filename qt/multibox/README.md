@@ -1,0 +1,19 @@
+<h2>Introduction</h2>
+This program is an updated version of the multibox_detector example progam included in the tensorflow distribution.  It integrates Qt into a tensorflow application so that a GUI program may make use of tensorflow utility.  The program is built within the source tree of the tensorflow distribution, so compilation of tensorflow is required.  Details of the compilation requirements are described in the main project README.md file.
+<p>
+<h3>MainWindow</h3>
+When the program is run, the main window will appear.  The model detection is started by clicking the display button.  The program takes the 5 most significant detections from the model and overlays the results on the image.  The text area will show the details of the location boxes.  Upon the first execution of the model, substantial overhead is incurred during the initialization process.  Subsequent executions of the model are much faster, as the intialization is cached in the system and only the actual runtime code is executed.  This can be observed by repeatedly clicking the display button.  GPU configured systems will be significantly faster than CPU only.
+<h3>SessionRunner</h3>
+The SessionRunner class contains the majority of tensorflow centric code in the program.  It is an override of the Qt QRunnable class so that it may be run inside a thread from QThreadPool.  It is necessary to run the class in a thread so that the main GUI program does not become unresponsive during the time the class is running the tensorflow model.
+<p><p>
+The SessionRunner is based on the code from the multibox_detector example, but differs in a significant manner.  The Graph at the heart of the detection algorithm has been prepended and appended with custom code to integrate into the higher level application.  This is significant as the completion of the entirety of code within a single graph will improve performance.  This is due to the overhead of executing each graph, a single graph having only one occurence of instatiation at run time, resulting in less overhead.
+<p><p>
+The operations preprended to the graph include reading the jpeg picture file and preprocessing it to comform to the standards expected by the detection model.  Operations appended to the model graph decode the output of the model with respect to the input data and reorder the output columns so that they align with graph operations that manipulate the original image to display the detection boxes in overlay.
+<p><p>
+An example explaining the details of the operation that appends the graph can be found on this <a href=https://stackoverflow.com/questions/49490262/combining-graphs-is-there-a-tensorflow-import-graph-def-equivalent-for-c/62071693#62071693>stackoverflow post</a>
+<p><p>
+The SessionRunner also parses the box locations file for the model using a graph.  While this probably overkill for the situation at hand, the code is a useful reference for addressing the issues surrounding CSV file parsing in tensorflow applications.  The parser also highlights the use of the ClientSession construct recently introduced into tensorflow as a less cumbersome alternate to the original Session concept.
+<h3>Label</h3>
+The Label class illustrates the conversion of tensorflow tensor data structures into a format usable in standard C/C++ code.  The jpeg image data is converted to an unsigned char * buffer and projected onto a QLabel.  Only one image format is supported for this application, but extension to other formats can be acheived by adding further qualifying code.
+<h3>Panel</h3>
+The Panel class is a container for the Label and button GUI and serves as the thread host for the session runner.  The showOutputs routine in this class is the callback SLOT for the SIGNAL done emitted by the session runner upon completing the detections.  Panel will retrive the detection results and display them in the GUI.  
