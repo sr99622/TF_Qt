@@ -1,5 +1,5 @@
 import os
-base = 'tensorflow/examples/qt/multibox'
+base = 'tensorflow/examples/TF_Qt/qt/multibox'
 files = os.listdir(base)
 for f in files:
     parts = f.split('.')
