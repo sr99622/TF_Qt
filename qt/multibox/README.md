@@ -12,7 +12,7 @@ The operations preprended to the graph include reading the jpeg picture file and
 <p><p>
 An example explaining the details of the operation that appends the graph can be found on this <a href=https://stackoverflow.com/questions/49490262/combining-graphs-is-there-a-tensorflow-import-graph-def-equivalent-for-c/62071693#62071693>stackoverflow post</a>
 <p><p>
-The SessionRunner also parses the box locations file for the model using a graph.  While this probably overkill for the situation at hand, the code is a useful reference for addressing the issues surrounding CSV file parsing in tensorflow applications.  The parser also highlights the use of the ClientSession construct recently introduced into tensorflow as a less cumbersome alternate to the original Session concept.
+The SessionRunner also parses the box locations file for the model using a graph.  While this is probably overkill for the situation at hand, the code is a useful reference for addressing the issues surrounding CSV file parsing in tensorflow applications.  The parser also highlights the use of the ClientSession construct recently introduced into tensorflow as a less cumbersome alternate to the original Session concept.
 <h3>Label</h3>
 The Label class illustrates the conversion of tensorflow tensor data structures into a format usable in standard C/C++ code.  The jpeg image data is converted to an unsigned char * buffer and projected onto a QLabel.  Only one image format is supported for this application, but extension to other formats can be acheived by adding further qualifying code.
 <h3>Panel</h3>
