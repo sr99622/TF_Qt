@@ -78,7 +78,7 @@ new_local_repository(
 <p>
 <b><a name=A7>Compile the program</a></b>
 <p>
-The program may now be compiled.  There is a python script in the project named compile.py.  It can be invoked by right clicking over the file name the Visual Studio Code file navigation panel on the left hand side of the window.  The pop up menu will have a selection called "Run Python File In Terminal" which is the desired action.  The terminal pane should be displayed along the bottom of the window and show the compilation steps underway as the program compiles.  If all goes well, the build will complete successfully.
+The program may now be compiled.  There is a python script in the project named compile.py.  It can be invoked by right clicking over the file name in the Visual Studio Code file navigation panel on the left hand side of the window.  The pop up menu will have a selection called "Run Python File In Terminal" which is the desired action.  The terminal pane should be displayed along the bottom of the window and show the compilation steps underway as the program compiles.  If all goes well, the build will complete successfully.
 <p>
 <b><a name=A8>Configure run time environment</a></b>
 <p>
