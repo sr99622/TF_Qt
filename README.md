@@ -94,7 +94,7 @@ The program directory executable is found within the tensorflow source tree at
 <p>
 Note that the full path name must be supplied, so the full path name will start with C:\ in most instances.
 <p>
-Once the program directory location has been added to the path, the windeployqt utility is run using the full path name of the program executable as the argument.  The utility will scan the executable for depedencies and populate the directory with the necessary files.
+Once the program directory location has been added to the path, the windeployqt utility is run using the full path name of the main.exe program executable as the argument.  The utility will scan the executable for depedencies and populate the directory with the necessary files.
 <p>
 <b><a name=A9>Run the program</a></b>
 <p>
